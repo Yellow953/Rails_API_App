@@ -1,12 +1,12 @@
 class ResultController < ApplicationController
   def index
-    @results = Result.last(10)
+    @results = Result.last(10).reverse
     render json: {
       results: @results
     }  
   end
 
-  def save
+  def create
     result = Result.new(key: params[:key], name: params[:name], text: params[:text], category: params[:category], minimum: params[:minimum], maximum: params[:maximum], average: params[:average])
     
     if result.save!

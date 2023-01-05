@@ -6,7 +6,7 @@ class SubController < ApplicationController
     }  
   end
 
-  def subscribe
+  def create
     sub = Sub.new(email: params[:email])
     
     if sub.save!
