@@ -2,7 +2,8 @@ class SubController < ApplicationController
   def index
     @subs = Sub.all
     render json: {
-      subs: @subs
+      subs: @subs,
+      status: 200
     }  
   end
 

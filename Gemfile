@@ -15,10 +15,16 @@ gem "bootsnap", require: false
 # gem "image_processing", "~> 1.2"
 # gem "rack-cors"
 
-group :development, :test do
+group :development do
   gem "debug", platforms: %i[ mri mingw x64_mingw ]
 end
 
 group :development do
   # gem "spring"
+end
+
+group :test do
+  gem 'rspec-rails'
+  gem 'capybara'
+  gem 'webdrivers'
 end
